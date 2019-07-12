@@ -8,6 +8,7 @@ use App\Http\Requests\ClienteStoreRequest as StoreRequest;
 use App\Http\Requests\ClienteUpdateRequest as UpdateRequest;
 
 use App\Cliente;
+use App\Produto;
 
 use Session;
 use Auth;
@@ -100,7 +101,9 @@ class ClienteController extends Controller
 
         }
 
-        return view('clientes.show', compact('cliente'));
+        $produtos = Produto::all();
+
+        return view('clientes.show', compact('cliente', 'produtos'));
 
     }
 

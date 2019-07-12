@@ -17,8 +17,8 @@ class CreateClientesTable extends Migration
             $table->increments('id');
 
             $table->char('nome', 100);
-            $table->char('cpf', 11);
-            $table->char('email', 40);
+            $table->char('cpf', 11)->unique();
+            $table->char('email', 40)->unique();
 
             $table->softDeletes();
 

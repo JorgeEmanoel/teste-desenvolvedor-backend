@@ -27,7 +27,7 @@ class ClienteStoreRequest extends FormRequest
             //
             'nome'  => 'required|max:100',
             'cpf'   => 'required|max:14',
-            'email' => 'required|max:40',
+            'email' => 'required|max:40|unique:clientes',
         ];
     }
 }

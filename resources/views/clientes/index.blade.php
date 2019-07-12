@@ -120,6 +120,7 @@
                             <th>CPF</th>
                             <th>E-mail</th>
                             <th>Cadastro</th>
+                            <th>Pedidos</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -142,6 +143,7 @@
                                         {{ $cliente->created_at->format('d/m/Y') }} às {{ $cliente->created_at->format('H:i') }}
                                     </small>
                                 </td>
+                                <td>{{ $cliente->pedidos->count() }}</td>
                                 <td>
                                     <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-xs btn-primary round"><i class="fa fa-edit"></i></a>
                                     <a href="#modal-cliente-{{ $cliente->id }}-delete" data-toggle="modal" class="btn btn-xs btn-danger round"><i class="fa fa-trash"></i></a>
